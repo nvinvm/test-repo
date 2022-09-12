@@ -1,0 +1,7 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata:
+  name: fastapi-demo-config
+data:
+  CONFIG_ONE: CONFIG_ONE
+  CONFIG_TWO: CONFIG_TWO

@@ -1,0 +1,8 @@
+site_name: 1Verse FastAPI Service Demo
+site_url: https://example.1verse.live/
+nav:
+    - Home: index.md
+    - About: about.md
+
+plugins:
+  - techdocs-core

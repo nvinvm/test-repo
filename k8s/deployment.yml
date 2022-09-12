@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-demo-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-demo-pod
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: fastapi-demo-pod
+    spec:
+      containers:
+      - name: fastapi-demo-pod
+        image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE
+        env:
+          - name: CONFIG_ONE
+            valueFrom:
+              configMapKeyRef:
+                name: fastapi-demo-config
+                key: CONFIG_ONE
+          - name: CONFIG_TWO
+            valueFrom:
+              configMapKeyRef:
+                name: fastapi-demo-config
+                key: CONFIG_TWO
+          - name: SECRET_ONE
+            valueFrom:
+              secretKeyRef:
+                name: fastapi-demo-secrets
+                key: SECRET_ONE
+          - name: SECRET_TWO
+            valueFrom:
+              secretKeyRef:
+                name: fastapi-demo-secrets
+                key: SECRET_TWO
+        ports:
+        - containerPort: 8080
+          name: fastapi-port
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m

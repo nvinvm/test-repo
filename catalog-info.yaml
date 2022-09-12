@@ -7,6 +7,6 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: fastapi-demo-pod
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: experimental
   owner: 1verselive

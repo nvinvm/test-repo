@@ -5,7 +5,7 @@ metadata:
   annotations:
     github.com/project-slug: 1verselive/fastapi-demo
     backstage.io/techdocs-ref: dir:.
-    'backstage.io/kubernetes-id': fastapi-demo-pod
+    backstage.io/kubernetes-id: fastapi-demo-pod
 spec:
   type: other
   lifecycle: unknown

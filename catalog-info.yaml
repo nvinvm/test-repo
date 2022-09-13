@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: fastapi-oneverse
   annotations:
-    github.com/project-slug: 1verselive/fastapi-demo
+    github.com/project-slug: nvinvm/test-repo
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: fastapi-oneverse
 spec:
